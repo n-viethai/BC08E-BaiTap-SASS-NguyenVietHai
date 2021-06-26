@@ -1,0 +1,27 @@
+.about {
+    position: relative;
+    .about__content-wrap {
+        @include flexGrid(nowrap,$m-0,$m-0);
+        align-items: center;
+        .about__item {
+            @include flexItem(2,$m-0,$m-0);
+            .about__item-sub-title {
+                @include textStyle($fs-4,$fw-4,$lh-0,$pink);
+            }
+            .about__item-title {
+                @include textStyle($fs-8,$fw-4,$lh-0,$black);
+            }
+            .about__iem-img {
+                @include img(100%,initial);
+            }
+        }
+    }
+
+    .about__img-background {
+        @include position(absolute,-1,initial,initial,0,0);
+        width: 100%;
+        img {
+            @include img(100%,18rem);
+        }
+    }
+}

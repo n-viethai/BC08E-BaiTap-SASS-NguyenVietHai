@@ -1,0 +1,46 @@
+header {
+    .header__container {
+        @include flex(center,space-between);
+        .header__logo {
+            img {
+                @include img(8rem,8rem);
+                display: block;
+            }
+        }
+        .header__nav {
+            @include flex(center,initial);
+            .navbar {
+                display: flex;
+                .navbar__item {
+                    margin: 0 $m-6;
+                    a {
+                        @include textStyle($fs-2,$fw-3,$lh-0,$black);
+                        transition: all 0.3s linear;
+                        &:hover{
+                            color: $pink-1;
+                        }
+                    }
+                }
+            }
+            .header__contact {
+                margin-left: $m-9;
+                .header__contact-social {
+                    margin:0 $m-1;
+                    @include textStyle($fs-1,$fw-0,$lh-0,$black);
+
+                    &:hover{
+                        color: $pink-1;
+                    }
+                }
+                .header__contact-phone {
+                    margin-right: $m-3;
+                    @extend .mybtn;
+                    @extend .mybtn.mybtn-primary;
+                    i {
+                        margin-right: $m-2;
+                    }
+                }
+            }
+        }
+    }
+}
