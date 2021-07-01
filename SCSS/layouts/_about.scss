@@ -1,15 +1,25 @@
 .about {
     position: relative;
+    padding-top: $pd-7;
     .about__content-wrap {
-        @include flexGrid(nowrap,$m-0,$m-0);
+        @include flexGrid(wrap,$m-0,$m-0);
+
         align-items: center;
         .about__item {
             @include flexItem(2,$m-0,$m-0);
+
+            @include mediaQuery($xs) {
+                @include flexItem(1,$m-0,$m-0);
+            }
             .about__item-sub-title {
                 @include textStyle($fs-4,$fw-4,$lh-0,$pink);
             }
             .about__item-title {
                 @include textStyle($fs-8,$fw-4,$lh-0,$black);
+
+                @include mediaQuery($xs) {
+                    font-size: $fs-xs-7;
+                }
             }
             .about__iem-img {
                 @include img(100%,initial);
@@ -22,6 +32,10 @@
         width: 100%;
         img {
             @include img(100%,18rem);
+
+            @include mediaQuery($xs) {
+                height: 5rem;
+            }
         }
     }
 }

@@ -14,12 +14,21 @@
     z-index: -1;
     left: 0;
     bottom: 0;
+
+    @include mediaQuery($xs) {
+      background: url(../../assets/img/footer_background.jpg) left bottom / 100%
+      18rem no-repeat;
+    }
   }
   .footer__content-wrap {
     @include flexGrid(wrap, $m-10, $m-10);
 
     .footer__item {
       @include flexItem(4, $m-10, $m-10);
+
+      @include mediaQuery($xs) {
+        @include flexItem(1, $m-10, $m-10);
+      }
       .footer__item-title {
         @include textStyle($fs-6, $fw-4, $lh-0, $light);
         margin-bottom: $m-6;

@@ -6,8 +6,8 @@ $black: #000;
 $black-1: rgba(0, 0, 0, 0.8);
 $black-2: rgba(0, 0, 0, 0.2);
 $light: #fff;
-$light-1: rgba(255,255,255,0.6);
-$light-2: rgba(255,255,255,0.4);
+$light-1: rgba(255, 255, 255, 0.6);
+$light-2: rgba(255, 255, 255, 0.4);
 
 // padding
 
@@ -20,7 +20,7 @@ $pd-6: 3rem;
 $pd-7: 4rem;
 $pd-8: 5rem;
 $pd-9: 6rem;
-$pd-10:8rem;
+$pd-10: 8rem;
 
 // margin
 
@@ -46,6 +46,7 @@ $fs-4: 1.6rem;
 $fs-5: 1.8rem;
 $fs-6: 2.4rem;
 $fs-7: 4rem;
+$fs-xs-7 : 4.8rem;
 $fs-8: 6rem;
 
 // font weight
@@ -68,8 +69,15 @@ $lh-5: 4rem;
 
 // border-radius
 
-$br-1:0.5rem;
-$br-2:1rem;
-$br-3:1.4rem;
-$br-4:2rem;
-$br-5:3rem;
+$br-1: 0.5rem;
+$br-2: 1rem;
+$br-3: 1.4rem;
+$br-4: 2rem;
+$br-5: 3rem;
+
+// media query
+
+$xs: 576px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;

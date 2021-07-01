@@ -9,6 +9,10 @@ header {
         }
         .header__nav {
             @include flex(center,initial);
+
+            @include mediaQuery($xs) {
+                display: none;
+            }
             .navbar {
                 display: flex;
                 .navbar__item {
