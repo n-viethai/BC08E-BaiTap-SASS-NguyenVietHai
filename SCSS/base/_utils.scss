@@ -3,6 +3,18 @@
     margin: auto;
     padding: 0 $pd-4;
 }
+
+.wrapper {
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+    transform: translateX(0px);
+}
+
+.wrapper.sidenav-open {
+    transform: translateX(300px);
+    position: fixed;
+}
+
 .mybtn {
     display: inline-block;
     text-decoration: none;
