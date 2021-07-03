@@ -24,6 +24,10 @@
   .team__item {
     @include flexItem(4, $m-9, $m-9);
 
+    @include mediaQuery($sm) {
+      @include flexItem(2, $m-9, $m-9);
+    }
+
     @include mediaQuery($xs) {
       @include flexItem(1, $m-9, $m-9);
     }

@@ -15,6 +15,16 @@
     left: 0;
     bottom: 0;
 
+    @include mediaQuery($lg) {
+      background: url(../../assets/img/footer_background.jpg) left bottom / 100%
+      30rem no-repeat;
+    }
+
+    @include mediaQuery($sm) {
+      background: url(../../assets/img/footer_background.jpg) left bottom / 100%
+      25rem no-repeat;
+    }
+
     @include mediaQuery($xs) {
       background: url(../../assets/img/footer_background.jpg) left bottom / 100%
       18rem no-repeat;
@@ -25,6 +35,10 @@
 
     .footer__item {
       @include flexItem(4, $m-10, $m-10);
+
+      @include mediaQuery($sm) {
+        @include flexItem(2, $m-10, $m-10);
+      }
 
       @include mediaQuery($xs) {
         @include flexItem(1, $m-10, $m-10);
