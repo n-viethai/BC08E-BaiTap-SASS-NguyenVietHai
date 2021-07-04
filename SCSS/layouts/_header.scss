@@ -3,6 +3,7 @@
   transition: all 0.5s ease-in-out;
   // transform: translateY(0%);
   position: absolute;
+  z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,15 +17,19 @@
   }
 }
 
-// header when scroll
+.header.sidenav-open {
+  transform: translateX(300px);
+  position: fixed;
+  // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
+// header when scroll
 .header.header-scroll {
   position: fixed;
   z-index: 9999;
   background-color: $light;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  // transform: translateY(-100%);
-  // transition: all 0.8s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
   .header__logo {
     .header__logo-img {
@@ -72,7 +77,9 @@
       opacity: 1;
       left: 0;
       transform: rotate(0deg);
+      will-change: transform;
       transition: all 0.5s ease-in-out;
+      opacity: 1;
 
       + span {
         margin-top: $m-2;
@@ -86,7 +93,8 @@
     }
 
     span:nth-child(2) {
-      transform: translateX(-100px);
+      // transform: translateX(-100px);
+      opacity: 0;
     }
 
     span:nth-child(3) {

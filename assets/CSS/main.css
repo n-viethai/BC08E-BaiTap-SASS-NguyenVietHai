@@ -22,15 +22,19 @@ html {
 }
 
 .wrapper {
-  -webkit-transition: all 0.8s ease-in-out;
-  transition: all 0.8s ease-in-out;
   overflow: hidden;
 }
 
-.wrapper.sidenav-open {
+.wrapper .wrapper__content {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.wrapper .wrapper__content.sidenav-open {
   -webkit-transform: translateX(300px);
           transform: translateX(300px);
-  position: fixed;
+  overflow-y: hidden;
+  height: 100%;
 }
 
 .mybtn, .sidenav__contact .sidenav__contact-phone .sidenav__contact-phone-link, .header__nav .header__contact .header__contact-phone, .subcribe .subcribe__container .subcribe__content-wrap .subcribe__form button, .footer .footer__content-wrap .footer__item .footer__item-form a {
@@ -118,8 +122,8 @@ html {
   -webkit-transform: translateX(-300px);
           transform: translateX(-300px);
   background-color: #fff;
-  -webkit-transition: all 0.8s ease-in-out;
-  transition: all 0.8s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   overflow: hidden;
 }
 
@@ -181,6 +185,7 @@ html {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   position: absolute;
+  z-index: 9999;
   top: 0;
   left: 0;
   width: 100%;
@@ -204,12 +209,20 @@ html {
           justify-content: space-between;
 }
 
+.header.sidenav-open {
+  -webkit-transform: translateX(300px);
+          transform: translateX(300px);
+  position: fixed;
+}
+
 .header.header-scroll {
   position: fixed;
   z-index: 9999;
   background-color: #fff;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .header.header-scroll .header__logo .header__logo-img {
@@ -294,8 +307,10 @@ html {
   left: 0;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
+  will-change: transform;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  opacity: 1;
 }
 
 .header__logo .menuToggle span + span {
@@ -308,8 +323,7 @@ html {
 }
 
 .header__logo .menuToggle.open span:nth-child(2) {
-  -webkit-transform: translateX(-100px);
-          transform: translateX(-100px);
+  opacity: 0;
 }
 
 .header__logo .menuToggle.open span:nth-child(3) {

@@ -1,8 +1,9 @@
 // menu icon
 document.querySelector(".menuToggle").onclick = function () {
   document.querySelector(".sidenav").classList.toggle("open");
-  document.querySelector(".wrapper").classList.toggle("sidenav-open");
+  document.querySelector(".wrapper__content").classList.toggle("sidenav-open");
   document.querySelector(".menuToggle").classList.toggle("open");
+  document.querySelector(".header").classList.toggle("sidenav-open");
 
   let element = document.querySelector(".header__logo-img");
   if (element.style.opacity === "0") {
@@ -60,7 +61,6 @@ let scrollFunction = () => {
     element.classList.add("header-scroll");
     // element.style.transform = "translateY(0%)";
 
-    clearTimeout(x);
   } else {
     // element.style.transform = "translateY(-100%)";
     element.classList.remove("header-scroll");
