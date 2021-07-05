@@ -12,7 +12,6 @@ html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 .grid {
@@ -26,15 +25,15 @@ html {
 }
 
 .wrapper .wrapper__content {
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
 .wrapper .wrapper__content.sidenav-open {
   -webkit-transform: translateX(300px);
           transform: translateX(300px);
-  overflow-y: hidden;
-  height: 100%;
 }
 
 .mybtn, .sidenav__contact .sidenav__contact-phone .sidenav__contact-phone-link, .header__nav .header__contact .header__contact-phone, .subcribe .subcribe__container .subcribe__content-wrap .subcribe__form button, .footer .footer__content-wrap .footer__item .footer__item-form a {
@@ -213,6 +212,8 @@ html {
   -webkit-transform: translateX(300px);
           transform: translateX(300px);
   position: fixed;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .header.header-scroll {
@@ -411,6 +412,12 @@ html {
   right: initial;
   bottom: initial;
   left: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .carousel {
+    display: none;
+  }
 }
 
 .about {

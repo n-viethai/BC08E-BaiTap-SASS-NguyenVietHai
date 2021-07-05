@@ -1,55 +1,43 @@
 // menu icon
+let dem = 0;
 document.querySelector(".menuToggle").onclick = function () {
   document.querySelector(".sidenav").classList.toggle("open");
   document.querySelector(".wrapper__content").classList.toggle("sidenav-open");
   document.querySelector(".menuToggle").classList.toggle("open");
   document.querySelector(".header").classList.toggle("sidenav-open");
 
+  // ẩn logo khi mở menu
   let element = document.querySelector(".header__logo-img");
   if (element.style.opacity === "0") {
     element.style.opacity = "1";
   } else {
     element.style.opacity = "0";
   }
+
+  // disable scroll when menu open
+  dem++;
+  if (dem % 2 != 0) {
+    let scrollY = document.documentElement.style.getPropertyValue("--scroll-y");
+    let element = document.querySelector(".wrapper__content");
+    element.style.position = "fixed";
+    element.style.top = `-${scrollY}`;
+  } else {
+    let element = document.querySelector(".wrapper__content");
+    let scrollY = element.style.top;
+    document.querySelector(".wrapper__content").style.position = "";
+    document.querySelector(".wrapper__content").style.top = "";
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    dem = 0;
+  }
 };
+// lấY giá trị scroll top
+window.addEventListener("scroll", () => {
+  document.documentElement.style.setProperty(
+    "--scroll-y",
+    `${window.scrollY}px`
+  );
+});
 
-// let headerStyle = {
-//   "background-color": "#fff",
-//   "box-shadow": "0 0 10px rgba(0,0,0,0.4)",
-//   position: "fixed",
-//   "z-index": "9999",
-//   top: "0",
-//   left: "0",
-//   width : "100%",
-//   padding : "5px"
-// };
-
-// console.log(headerStyle["box-shadow"]);
-
-// let scrollFunction = () => {
-//   let element = document.querySelector(".header");
-//   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-
-//     document.querySelector('.header__logo-img').style["width"] = "40px";
-//     document.querySelector('.header__logo-img').style["height"] = "40px";
-
-//     for (let index in headerStyle) {
-//       element.style[index] = headerStyle[index];
-//     }
-//   } else {
-//     document.querySelector('.header__logo-img').style["width"] = "80px";
-//     document.querySelector('.header__logo-img').style["height"] = "80px";
-
-//     for (let index in headerStyle) {
-//       element.style[index] = "initial";
-//     }
-//   }
-// };
-// var x = window.matchMedia("(min-width: 1200px)")
-// console.log(x);
-// window.onscroll = function () {
-//   scrollFunction();
-// };
 
 let scrollFunction = () => {
   let element = document.querySelector(".header");
@@ -59,18 +47,8 @@ let scrollFunction = () => {
     document.documentElement.scrollTop > 300
   ) {
     element.classList.add("header-scroll");
-    // element.style.transform = "translateY(0%)";
-
   } else {
-    // element.style.transform = "translateY(-100%)";
     element.classList.remove("header-scroll");
-    // element.style.removeProperty("transform");
-    // x = setTimeout(function () {
-    //   {
-    //     element.classList.remove("header-scroll");
-    //     element.style.transform = "translateY(0%)";
-    //   }
-    // }, 5000);
   }
 };
 
